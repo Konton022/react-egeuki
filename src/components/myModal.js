@@ -16,9 +16,6 @@ const MyModal = ({ modal, handleClickButton }) => {
         <Button variant="secondary" onClick={handleClickButton}>
           Close
         </Button>
-        <Button variant="primary" onClick={handleClickButton}>
-          Save Changes
-        </Button>
       </Modal.Footer>
     </Modal>
   );
