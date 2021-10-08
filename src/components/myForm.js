@@ -1,14 +1,21 @@
-import React from 'react';
+import React, {useState} from 'react';
+
 import { Form, Button } from 'react-bootstrap';
 
 const MyForm = () => {
+  const [name, setName] = useState('')
+  const [inn, setInn] = useState('')
+  const [ogrn, setOgrn] = useState('')
+  const [date, setDate] = useState('')
+  const [adrress, setAdrress] = useState('')
 
-  const handleClickSubmit = (event) =>{
+
+  const handleClickSubmit = (event) => {
     event.preventDefault()
-    console.log('click')
-  }
+    console.log('myForm', event)}
+  
   return (
-    <Form>
+    <Form onSubmit={handleClickSubmit}>
       <Form.Group className="mb-3" controlId="formBasicEmail">
         <Form.Label>Name</Form.Label>
         <Form.Control type="text" placeholder="Enter name" />
@@ -21,7 +28,7 @@ const MyForm = () => {
         <Form.Label>Adrress</Form.Label>
         <Form.Control type="text" placeholder="Enter adrress" />
       </Form.Group>
-      <Button variant="primary" type="submit" onSubmit = {handleClickSubmit}>
+      <Button variant="primary" type="submit" >
         Submit
       </Button>
     </Form>
