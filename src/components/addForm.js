@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 
 import { Form, Button } from 'react-bootstrap';
 
-const MyForm = () => {
+const MyForm = ({handleClickSaveSubmit}) => {
   const [name, setName] = useState('')
   const [inn, setInn] = useState('')
   const [ogrn, setOgrn] = useState('')
@@ -32,9 +32,6 @@ const MyForm = () => {
         <Form.Label>Adrress</Form.Label>
         <Form.Control type="text" placeholder="Enter adrress" value={adrress} onChange={(event)=>{setAdrress(event.target.value)}}/>
       </Form.Group>
-      <Button variant="primary" type="submit" >
-        Submit
-      </Button>
     </Form>
   );
 };
