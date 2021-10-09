@@ -4,30 +4,31 @@ import './style.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Button, Navbar, Container, Table, Modal } from 'react-bootstrap';
 import Firms from './FIRMS.js';
-import MyTable from './components/myTable'
-import NaviBar from './components/naviBar'
-import MyModal from './components/myModal'
-
+import ScopeTable from './components/scopeTable';
+import NaviBar from './components/naviBar';
+import AddModal from './components/addModal';
 
 export default function App() {
   const [firms, setFirms] = useState(Firms);
-  const [modal, setModal] = useState(false)
-  const handleClickModal = () => {setModal(!modal)}
+  const [modal, setModal] = useState(false);
+  const handleClickModal = () => {
+    setModal(!modal);
+  };
 
-  console.log('modal', modal)
-  
-  
+  console.log('modal', modal);
+
   return (
     <div>
       <NaviBar />
-      <Button size="sm" onClick={handleClickModal}>
+
+      
+        <AddModal modal={modal} handleClickButton={handleClickModal} />
+        <ScopeTable firms={firms} />
+
+        <Button size="sm" onClick={handleClickModal}>
         Add company
       </Button>
-      <MyModal modal={modal} handleClickButton={handleClickModal}/>
-
-
-
-      <MyTable firms={firms} />
+      
     </div>
   );
 }

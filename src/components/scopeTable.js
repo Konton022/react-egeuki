@@ -1,6 +1,6 @@
 import React from 'react';
 import { Table } from 'react-bootstrap';
-const MyTable = ({ firms }) => {
+const ScopeTable = ({ firms }) => {
   return (
     <Table bordered>
       <thead>
@@ -31,4 +31,4 @@ const MyTable = ({ firms }) => {
   );
 };
 
-export default MyTable;
+export default ScopeTable;
