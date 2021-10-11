@@ -6,10 +6,9 @@ export const slice = createSlice({
     data: [],
   },
   reducers: {
-    updateFirms: (state, action) => ({
-      ...state,
-      data: action.payload,
-    }),
+    updateFirms: (state, action) => {
+      state.data.push(action.payload);
+    },
   },
 });
 

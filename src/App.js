@@ -21,7 +21,7 @@ export default function App() {
 
   const dispatch = useDispatch();
 
-  useEffect(() => dispatch(updateFirms(firms)), []);
+  useEffect(() => dispatch(updateFirms({ firms })), []);
 
   return (
     <div>
