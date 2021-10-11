@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 
 import { Form, Button } from "react-bootstrap";
+import { useDispatch, useSelector } from "react-redux";
+import { selectFirm, updateFirms } from "../store/firms";
 
 const MyForm = ({ saveChanges }) => {
   const [name, setName] = useState("");
@@ -8,11 +10,15 @@ const MyForm = ({ saveChanges }) => {
   const [ogrn, setOgrn] = useState("");
   const [date, setDate] = useState("");
   const [adrress, setAdrress] = useState("");
-  const [isOpen, setOpen] = useState(true);
+
+  const dispatch = useDispatch();
+  const firmsRedux = useSelector(selectFirm);
+  console.log(firmsRedux);
 
   const saveSubmit = (event) => {
     event.preventDefault();
-    saveChanges({ name, inn, ogrn, date, adrress });
+    dispatch(updateFirms({ name, inn, ogrn, date, adrress }));
+    saveChanges();
   };
 
   return (
