@@ -14,12 +14,13 @@ const MyForm = ({handleClickSaveSubmit}) => {
   const handleClickSubmit = (event) => {
     event.preventDefault()
     setOpen(!isOpen)
+    handleClickSaveSubmit(name, inn, ogrn, date, adrress)
     console.log('myForm', name, inn,ogrn, date,adrress, isOpen)
   
   }
   
   return (
-    <Form onSubmit={handleClickSubmit}>
+    <Form onSubmit={handleClickSaveSubmit}>
       <Form.Group className="mb-3" controlId="formBasicEmail">
         <Form.Label>Name</Form.Label>
         <Form.Control type="text" placeholder="Enter name" value={name} onChange={(event)=>{setName(event.target.value)}}/>
