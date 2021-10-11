@@ -12,7 +12,7 @@ const MyForm = ({ saveChanges }) => {
 
   const saveSubmit = (event) => {
     event.preventDefault();
-    saveChanges({ name, inn, ogrn });
+    saveChanges({ name, inn, ogrn, date, adrress });
   };
 
   return (
