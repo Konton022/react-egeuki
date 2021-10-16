@@ -3,12 +3,13 @@ import { createSlice } from "@reduxjs/toolkit";
 export const slice = createSlice({
   name: "firms",
   initialState: {
-    data: [],
+    data: {},
   },
   reducers: {
-    updateFirms: (state, action) => {
-      state.data.push(action.payload);
-    },
+    updateFirms: (state, action) => ({
+      ...state,
+      data: action.payload,
+    }),
   },
 });
 

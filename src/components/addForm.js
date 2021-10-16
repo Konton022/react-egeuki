@@ -4,7 +4,7 @@ import { Form, Button } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
 import { selectFirm, updateFirms } from "../store/firms";
 
-const MyForm = ({ saveChanges }) => {
+const MyForm = ({ saveChanges, handleClickClose }) => {
   const [name, setName] = useState("");
   const [inn, setInn] = useState("");
   const [ogrn, setOgrn] = useState("");
@@ -71,6 +71,9 @@ const MyForm = ({ saveChanges }) => {
         />
       </Form.Group>
       <Button type="submit">Save changes</Button>
+      <Button variant="secondary" onClick={handleClickClose}>
+        Close
+      </Button>
     </Form>
   );
 };

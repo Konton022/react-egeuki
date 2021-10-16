@@ -1,5 +1,5 @@
 import React from "react";
-import { Modal, Button } from "react-bootstrap";
+import { Modal } from "react-bootstrap";
 
 import AddForm from "./addForm";
 
@@ -15,13 +15,11 @@ const AddModal = ({ modal, handleClickButton }) => {
         <Modal.Title>Add new company</Modal.Title>
       </Modal.Header>
       <Modal.Body>
-        <AddForm saveChanges={handleClickSubmitButton} />
+        <AddForm
+          saveChanges={handleClickSubmitButton}
+          handleClickClose={handleClickButton}
+        />
       </Modal.Body>
-      <Modal.Footer>
-        <Button variant="secondary" onClick={handleClickButton}>
-          Close
-        </Button>
-      </Modal.Footer>
     </Modal>
   );
 };
